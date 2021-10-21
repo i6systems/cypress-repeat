@@ -90,6 +90,11 @@ parseArguments()
         }
       }
 
+      if (options.parallel && k > 0) {
+        runOptions.parallel = false
+        delete runOptions.ciBuildId
+      }
+
       allRunOptions.push(runOptions)
     }
     return allRunOptions
