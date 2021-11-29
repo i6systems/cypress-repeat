@@ -95,6 +95,11 @@ parseArguments()
         delete runOptions.ciBuildId
       }
 
+      if (k < repeatNtimes - 1) {
+          runOptions.record = false
+          delete runOptions.key
+      }
+
       allRunOptions.push(runOptions)
     }
     return allRunOptions
